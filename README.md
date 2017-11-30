@@ -2,7 +2,7 @@
 
 mcu project
 
-1. 系統分析文件 - [Code](https://github.com/CodeMercs/good-classmate/blob/master/Manual/gcm-manual.md)
+1. 系統分析文件 - [Manual](https://github.com/CodeMercs/good-classmate/blob/master/Manual/gcm-manual.md)
 2. 專案程式 - [Project](https://github.com/CodeMercs/good-classmate/tree/master/GoodClassmate)
 3. 實際完成展示 - [Demo](https://github.com/CodeMercs/good-classmate/blob/master/Manual/gcm-demo.md)
 
