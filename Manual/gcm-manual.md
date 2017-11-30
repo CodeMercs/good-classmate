@@ -245,7 +245,7 @@ https://github.com/CodeMercs/good-classmate
 
 ## 13. ERD
 
-![]()
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ERD.png)
 
 
 
