@@ -84,7 +84,7 @@ https://github.com/CodeMercs/good-classmate
 |               使用者             |      記帳、查帳、提醒、標籤      |
 
 
-## 使用案例
+## 7. 使用案例
 
 ### (1) 刪除記帳
 
@@ -170,12 +170,12 @@ https://github.com/CodeMercs/good-classmate
 |  步驟 4  | 顯示記帳 |
 
 
-## 7. 使用案例圖
+## 8. 使用案例圖
 
 ![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/UC1.png)
 
 
-## 8. 活動圖
+## 9. 活動圖
 
 ### (1) 刪帳活動圖
 
@@ -207,12 +207,12 @@ https://github.com/CodeMercs/good-classmate
 ![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT6.png)
 
 
-## 9. 類別圖
+## 10. 類別圖
 
 ![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/C1.png)
 
 
-## 10. 循序圖
+## 11. 循序圖
 
 ### (1) 循序圖
 
@@ -229,7 +229,7 @@ https://github.com/CodeMercs/good-classmate
 ![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/SD3.png)
 
 
-## 11. 資料詞彙
+## 12. 資料詞彙
 
 ### (1) GCMTB
 
@@ -243,7 +243,7 @@ https://github.com/CodeMercs/good-classmate
 | 6 |    |    | wedt | varchar(30) | 否 | 還款對象標籤 | haoye |
 
 
-## 12. ERD
+## 13. ERD
 
 ![]()
 
