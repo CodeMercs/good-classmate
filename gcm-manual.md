@@ -86,22 +86,61 @@ https://github.com/CodeMercs/good-classmate
 
 ## 7. 使用案例圖
 
-![]()
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/UC1.png)
 
 
 ## 8. 活動圖
 
-![]()
+### (1) 刪帳活動圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT1.png)
+
+
+### (2) 刪除標籤活動圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT2.png)
+
+
+### (3) 提醒時間活動圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT3.png)
+
+
+### (4) 新增標籤活動圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT4.png)
+
+
+### (5) 查帳活動圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT5.png)
+
+
+### (6) 記帳活動圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/ACT6.png)
 
 
 ## 9. 類別圖
 
-![]()
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/C1.png)
 
 
 ## 10. 循序圖
 
-![]()
+### (1) 循序圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/SD1.png)
+
+
+### (2) 循序圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/SD2.png)
+
+
+### (3) 循序圖
+
+![](https://raw.githubusercontent.com/CodeMercs/good-classmate/master/Image/SD3.png)
 
 
 ## 11. 資料詞彙
