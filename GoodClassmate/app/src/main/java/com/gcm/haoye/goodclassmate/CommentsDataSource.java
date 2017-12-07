@@ -20,8 +20,13 @@ public class CommentsDataSource {
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] allColumns = {
-            MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_COMMENT };
+            MySQLiteHelper.COLUMN_LIST_ID,
+            MySQLiteHelper.COLUMN_NAME,
+            MySQLiteHelper.COLUMN_MONEY,
+            MySQLiteHelper.COLUMN_DATAEND,
+            MySQLiteHelper.COLUMN_DATASTART,
+            MySQLiteHelper.COLUMN_WEDT
+    };
 
     public CommentsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -35,27 +40,28 @@ public class CommentsDataSource {
         dbHelper.close();
     }
 
-    public Comment createComment(String comment) {
-        ContentValues values = new ContentValues();
-        values.put(MySQLiteHelper.COLUMN_COMMENT, comment);
-        long insertId = database.
-                insert(MySQLiteHelper.TABLE_COMMENTS, null,values);
+    public long insertComment(Comment newComment) {
 
-        Cursor cursor = database.query
-                (MySQLiteHelper.TABLE_COMMENTS,
-                        allColumns, MySQLiteHelper.
-                                COLUMN_ID + " = " + insertId, null,
-                        null, null, null);
-        cursor.moveToFirst();
-        Comment newComment = cursorToComment(cursor);
-        cursor.close();
-        return newComment;
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_NAME, newComment.getName());
+        values.put(MySQLiteHelper.COLUMN_MONEY,newComment.getMoney());
+        values.put(MySQLiteHelper.COLUMN_DATAEND,newComment.getDataend());
+        values.put(MySQLiteHelper.COLUMN_DATASTART,newComment.getDatestart());
+        values.put(MySQLiteHelper.COLUMN_WEDT,newComment.getWedt());
+        for(String str:values.keySet()){
+            System.out.println(values.get(str).toString());
+        }
+        System.out.println(MySQLiteHelper.TABLE_COMMENTS);
+
+        long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null,values);
+        return insertId;
     }
 
+
     public void deleteComment(Comment comment) {
-        long id = comment.getId();
+        long id = comment.getList_id();
         System.out.println("Comment deleted with id: " + id);
-        database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_ID
+        database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_LIST_ID
                 + " = " + id, null);
     }
 
@@ -64,7 +70,8 @@ public class CommentsDataSource {
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
                 allColumns, null, null, null, null, null);
-
+        if(cursor.getColumnCount() == 0)
+            return null;
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             Comment comment = cursorToComment(cursor);
@@ -78,8 +85,12 @@ public class CommentsDataSource {
 
     private Comment cursorToComment(Cursor cursor) {
         Comment comment = new Comment();
-        comment.setId(cursor.getLong(0));
-        comment.setComment(cursor.getString(1));
+        comment.setList_id(cursor.getLong(0));
+        comment.setName(cursor.getString(1));
+        comment.setMoney(cursor.getInt(2));
+        comment.setDataend(cursor.getString(3));
+        comment.setDatestart(cursor.getString(4));
+        comment.setWedt(cursor.getString(5));
         return comment;
     }
 }

@@ -34,13 +34,22 @@
                 android:layout_weight="1"
                 android:gravity="center"/>
 
-            <EditText
-                android:id="@+id/staet"
+            <TextView
+                android:id="@+id/startDate_TextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="date" />
+                android:text="日期"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/startTime_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="時間"
+                android:ems="10"
+                android:clickable="true"/>
 
         </LinearLayout>
         <LinearLayout
@@ -57,7 +66,7 @@
                 android:gravity="center"/>
 
             <EditText
-                android:id="@+id/moneyet"
+                android:id="@+id/money_EditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -75,17 +84,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="還款時間"
+                android:text="還款時限"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
             <EditText
-                android:id="@+id/endet"
+                android:id="@+id/dataend_EditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="date" />
+                android:inputType="number" />
 
         </LinearLayout>
         <LinearLayout
@@ -101,13 +110,16 @@
                 android:layout_weight="1"
                 android:gravity="center"/>
 
-            <Spinner
-                android:id="@+id/mansper"
+            <EditText
+                android:id="@+id/user_EditText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -121,13 +133,16 @@
                 android:layout_weight="1"
                 android:gravity="center"/>
 
-            <Spinner
-                android:id="@+id/timesper"
+            <EditText
+                android:id="@+id/warning_EditText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
 
         </LinearLayout>
+
         <Button
             android:id="@+id/submitbtn"
             android:layout_weight="1"

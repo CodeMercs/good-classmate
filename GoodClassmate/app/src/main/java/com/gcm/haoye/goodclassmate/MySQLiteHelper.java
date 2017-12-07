@@ -11,17 +11,26 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_COMMENTS = "comments";
-    public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_COMMENT = "comment";
+    public static final String COLUMN_LIST_ID = "list_id";
+    public static final String COLUMN_MONEY = "money";
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_DATAEND = "dataend";
+    public static final String COLUMN_DATASTART = "datastart";
+    public static final String COLUMN_WEDT = "wedt";
 
     private static final String DATABASE_NAME = "commments.db";
     private static final int DATABASE_VERSION = 3;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_COMMENTS + "(" + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_COMMENT
-            + " text not null);";
+            + TABLE_COMMENTS + "("
+            + COLUMN_LIST_ID + " integer primary key autoincrement, "
+            + COLUMN_NAME + " text not null,"
+            + COLUMN_MONEY + " integer not null,"
+            + COLUMN_DATAEND + " text not null,"
+            + COLUMN_DATASTART + " text not null,"
+            + COLUMN_WEDT + " text not null"
+            + ");";
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
