@@ -76,6 +76,7 @@ public class Main2Activity extends Activity {
             int warning = Integer.parseInt(warningStr);
             if(dataEnd<warning) {
                 Toast.makeText(context, "通知時間比還款時間多是白痴嗎？", Toast.LENGTH_SHORT).show();
+                return;
             }
             Comment comment =new Comment();
             comment.setName(nameStr);
