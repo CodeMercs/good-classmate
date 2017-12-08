@@ -1,4 +1,4 @@
-# good-classmate
+# Good Classmate APP
 
 mcu project
 
