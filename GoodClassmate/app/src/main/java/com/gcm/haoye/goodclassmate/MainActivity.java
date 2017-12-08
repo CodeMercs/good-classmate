@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
@@ -35,7 +36,30 @@ public class MainActivity extends ListActivity {
 
     private View.OnClickListener ClsBtn = new View.OnClickListener(){
         public void onClick(View v){
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    datasource = new CommentsDataSource(MainActivity.this);
+                    datasource.open();
+                    List<Comment> values = datasource.getAllComments();
+                    if(values != null) {
+                        System.out.println(values);
+                        for(int i = 0; i < values.size(); i++){
+                            int DataEndNum = Integer.parseInt(values.get(i).getDataend());
+                            int WedtNum = Integer.parseInt(values.get(i).getWedt());
+                            long DateStartNum = Long.parseLong(values.get(i).getDatestart());
+                            Calendar c = Calendar.getInstance();
+                            System.out.println(c.getTime().getTime());
+                            c.getTime().getTime();
+                            ;
 
+                        }
+                    }
+                }
+            };
+
+            Thread t = new Thread(runnable);
+            t.start();
         }
     };
 
@@ -52,9 +76,10 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if(requestCode == REQUESTCODE){
-             adapter.list = datasource.getAllComments();
-             adapter.notifyDataSetChanged();
+            adapter.list = datasource.getAllComments();
+            adapter.notifyDataSetChanged();
         }
 
     }

@@ -21,9 +21,9 @@ import java.util.Date;
 public class Main2Activity extends Activity {
 
     protected Button submitbtnobj;
-    private TextView dataStart,startDate,startTime;
-    private EditText name,money,dataEnd,warning;
-    private int saveYear,saveMonth,saveDay,saveHour,saveMinute;
+    private TextView dataStart, startDate, startTime;
+    private EditText name, money, dataEnd, warning;
+    private int saveYear, saveMonth, saveDay, saveHour, saveMinute;
     private boolean dateClick,timeClick;
     private Context context;
     private CommentsDataSource database;
@@ -53,11 +53,11 @@ public class Main2Activity extends Activity {
             String moneyStr = money.getText().toString();
             String dataEndStr =dataEnd.getText().toString();
             String warningStr = warning.getText().toString();
-            if (startDateStr.isEmpty() &&
-                    startTimeStr.isEmpty() &&
-                    nameStr.isEmpty() &&
-                    moneyStr.isEmpty() &&
-                    dataEndStr.isEmpty() &&
+            if (startDateStr.isEmpty() ||
+                    startTimeStr.isEmpty() ||
+                    nameStr.isEmpty() ||
+                    moneyStr.isEmpty() ||
+                    dataEndStr.isEmpty() ||
                     warningStr.isEmpty()
                     ){
                 Toast.makeText(context, "資料未齊全", Toast.LENGTH_SHORT).show();
@@ -66,18 +66,25 @@ public class Main2Activity extends Activity {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/HH/mm");
             Date date = null;
             try {
-                date=sdf.parse(saveYear+"/"+saveMonth+"/"+saveDay+"/"+saveHour+"/"+saveMinute);
+                date = sdf.parse(saveYear+"/"+saveMonth+"/"+saveDay+"/"+saveHour+"/"+saveMinute);
             } catch (ParseException e) {
                 Toast.makeText(context, "時間格式有誤", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
                 return;
             }
+            int dataEnd =Integer.parseInt(dataEndStr);
+            int warning = Integer.parseInt(warningStr);
+            if(dataEnd<warning) {
+                Toast.makeText(context, "通知時間比還款時間多是白痴嗎？", Toast.LENGTH_SHORT).show();
+            }
             Comment comment =new Comment();
             comment.setName(nameStr);
             comment.setMoney(Integer.parseInt(moneyStr));
-            comment.setWedt(warningStr);
             comment.setDataend(dataEndStr);
             comment.setDatestart(date.getTime()+"");
+
+            comment.setWedt(warningStr);
+
             System.err.println(comment.toString());
             database.open();
             database.insertComment(comment);
@@ -104,8 +111,8 @@ public class Main2Activity extends Activity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         startDate.setText(year + " 年 "+ month + " 月 " + day + " 日 ");
-                        saveYear =year;
-                        saveMonth =month;
+                        saveYear = year;
+                        saveMonth = month;
                         saveDay = day;
                         dateClick = true;
                     }
@@ -136,9 +143,6 @@ public class Main2Activity extends Activity {
         money = findViewById(R.id.money_EditText);
         dataEnd =findViewById(R.id.dataend_EditText);
         warning = findViewById(R.id.warning_EditText);
-
-
-
 
         submitbtnobj = findViewById(R.id.submitbtn);
         submitbtnobj.setOnClickListener(SubmitBtn);

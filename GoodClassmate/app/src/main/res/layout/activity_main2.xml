@@ -74,6 +74,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
+                android:maxLength="5"
                 android:gravity="center"
                 android:hint="$$$" />
 
@@ -98,9 +99,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number"
                 android:gravity="center"
-                android:hint="Day" />
+                android:hint="Day"
+                android:inputType="number"
+                android:maxLength="5" />
 
         </LinearLayout>
         <LinearLayout
@@ -122,6 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:maxLength="5"
                 android:inputType="text"
                 android:gravity="center"
                 android:hint="Name" />
@@ -149,6 +152,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:gravity="center"
+                android:maxLength="5"
                 android:hint="Day" />
         </LinearLayout>
 

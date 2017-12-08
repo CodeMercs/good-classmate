@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 public class MyAdapter extends BaseAdapter {
     Context context;
     public List<Comment> list;
+    private CommentsDataSource datasource;
 
     public MyAdapter(Context context,List<Comment> values) {
         this.list = values;
@@ -46,22 +48,41 @@ public class MyAdapter extends BaseAdapter {
             TextView view_id = convertView.findViewById(R.id.list_id);
             TextView view_name = convertView.findViewById(R.id.name);
             TextView view_money = convertView.findViewById(R.id.money);
+            Button view_deletebutton = convertView.findViewById(R.id.deletebutton);
             holder.view_id = view_id;
             holder.view_name = view_name;
             holder.view_money = view_money;
+            holder.view_deletebutton = view_deletebutton;
             convertView.setTag(holder);
-        }else {
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        Comment comment = list.get(position);
-        holder.view_id.setText(comment.getList_id()+"");
-        holder.view_money.setText(comment.getMoney()+"");
+        final Comment comment = list.get(position);
+        holder.view_id.setText(comment.getList_id() + "");
+        holder.view_money.setText(comment.getMoney() + "");
         holder.view_name.setText(comment.getName());
+        holder.view_deletebutton
+                .setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                datasource = new CommentsDataSource(context);
+                                datasource.open();
+                                datasource.deleteComment(comment.getList_id());
+                                list = datasource.getAllComments();
+                                /* 更新畫面 */
+                                notifyDataSetChanged();
+                            }
+                        }
+                );
         return convertView;
     }
+
+
     class ViewHolder{
         TextView view_id;
         TextView view_name ;
         TextView view_money ;
+        Button view_deletebutton;
     }
 }

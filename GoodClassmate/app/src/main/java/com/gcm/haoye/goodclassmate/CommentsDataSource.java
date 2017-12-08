@@ -58,8 +58,7 @@ public class CommentsDataSource {
     }
 
 
-    public void deleteComment(Comment comment) {
-        long id = comment.getList_id();
+    public void deleteComment(long id) {
         System.out.println("Comment deleted with id: " + id);
         database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_LIST_ID
                 + " = " + id, null);
