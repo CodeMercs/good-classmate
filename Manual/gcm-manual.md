@@ -1,4 +1,4 @@
-# Good-classmate APP
+# Good Classmate APP
 
 ## 0. Github
 
