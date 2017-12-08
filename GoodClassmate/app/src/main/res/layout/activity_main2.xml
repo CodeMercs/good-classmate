@@ -41,7 +41,8 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:text="日期"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:gravity="center" />
             <TextView
                 android:id="@+id/startTime_TextView"
                 android:layout_width="match_parent"
@@ -49,7 +50,8 @@
                 android:layout_weight="1"
                 android:text="時間"
                 android:ems="10"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:gravity="center" />
 
         </LinearLayout>
         <LinearLayout
@@ -71,7 +73,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:gravity="center"
+                android:hint="$$$" />
 
         </LinearLayout>
 
@@ -86,7 +90,7 @@
                 android:layout_height="match_parent"
                 android:text="還款時限"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center" />
 
             <EditText
                 android:id="@+id/dataend_EditText"
@@ -94,7 +98,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:gravity="center"
+                android:hint="Day" />
 
         </LinearLayout>
         <LinearLayout
@@ -116,7 +122,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:gravity="center"
+                android:hint="Name" />
 
         </LinearLayout>
 
@@ -139,8 +147,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
-
+                android:inputType="number"
+                android:gravity="center"
+                android:hint="Day" />
         </LinearLayout>
 
         <Button

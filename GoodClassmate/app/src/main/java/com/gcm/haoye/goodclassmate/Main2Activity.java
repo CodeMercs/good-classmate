@@ -103,7 +103,7 @@ public class Main2Activity extends Activity {
                         Main2Activity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
-                        startDate.setText(year+"年"+month+"月"+day+"日");
+                        startDate.setText(year + " 年 "+ month + " 月 " + day + " 日 ");
                         saveYear =year;
                         saveMonth =month;
                         saveDay = day;
@@ -123,7 +123,7 @@ public class Main2Activity extends Activity {
                 new TimePickerDialog(Main2Activity.this, new TimePickerDialog.OnTimeSetListener(){
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        startTime.setText(hourOfDay+"時"+minute+"分");
+                        startTime.setText(hourOfDay + " 時 " + minute + " 分 ");
                         saveHour = hourOfDay;
                         saveMinute = minute;
                         timeClick = true;
